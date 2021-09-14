@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mobocoding</title>
+</head>
+<body>
+   
+   <!-- 
+   
+   hai mobocoding membagikan triks nih
+   buat bikin burung hantu :)
+   selamat mencoba 
+   
+   -->
+   
+   <!-- the owl -->
+   
+   <!-- container untuk si 
+   burung hantu sekaligus mata sebelah
+   kiri-->
+   <div class="owl-container eyes">
+   	 <!-- untuk mata kanannya -->
+     <div class="right-eyes eyes"></div>
+     <!-- untuk bagian paruhnya -->
+     <div class="beak"></div>
+   </div>
+   
+   <!--  style -->
+   
+<style type="text/css">
+
+  /*
+    disini mobocoding setting ukuran
+    burung hantu di root
+    dengan variable dibawah
+    
+    coba kalo diubah ukurannya bagaimana
+    :)
+    
+    
+   */
+   
+  :root{
+    --w: 90px;
+    --h: var(--w);
+    --bg1: orange;
+    --bg2: #333;
+    --r: calc(var(--w) / 2);
+    --hlf: calc(var(--w) / 2 * 1.2);
+    --thin: calc(var(--w) / 2 * 0.2);
+  }
+  /* 
+    disini mobo buat ukuran html dan body
+    100%
+  */
+  
+  html, body{
+  	width: 100%;
+  	height: 100%;
+  	margin: 0;
+  }
+  /* 
+  	untuk background nya menggunakan bg2
+  */
+  body{
+    background: var(--bg2);
+  }     
+   
+   /*
+   	nah disini masuk bagian matanya
+   	disini, disini untuk mata mobo
+   	gunakan before dan after
+   */
+   
+  .eyes::after{
+   	content: "";
+   	position: absolute;
+   	display: block;
+   	background: var(--bg1);
+   	width: var(--thin);
+   	height: var(--thin);
+   	margin: auto;
+   	border-radius: calc(var(--hlf) / 2);
+  }
+   
+  .eyes::before{
+    content: "";
+    position: absolute;
+    display: block;
+    background: var(--bg2);
+    width: var(--hlf);
+    height: var(--hlf);
+    margin: auto;
+    border-radius: calc(var(--hlf) / 2);
+  }
+  
+  /* end of mata */
+   
+   /*
+   	dibawah ini style untuk bagian luar
+   	matanya
+   */
+   
+  .owl-container{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--w);
+    height: var(--h);
+    background: var(--bg1);
+    border-top-right-radius: var(--r);
+    border-bottom-right-radius: var(--r);
+    border-bottom-left-radius: var(--r);
+    margin: auto;
+    margin-top: calc(
+    	50% + (
+    	 var(--w) * 0.5
+    	)
+    );
+    margin-left: calc(
+    	50% - (
+    	  var(--w) * 0.95
+    	)
+    );
+   }
+  /*
+  	nah bagian ini adalah sebelah kanan
+  	untuk bagian luar mata
+  */
+  .right-eyes{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--w);
+    height: var(--h);
+    background: var(--bg1);
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    z-index: 99;
+    margin-left: calc(var(--w) * 1.8);
+    border: calc(var(--w) * 0.08) 
+     		solid var(--bg2);
+  }
+  /*
+  
+  	finally 
+  	masuk ke bagian paruhnya
+  
+  */ 
+  .beak{
+    position: absolute;
+   	width: var(--hlf);
+   	height: var(--hlf);
+   	background: var(--bg1);
+   	transform: rotate(45deg);
+   	bottom: -10%;
+   	right:-25%;
+   	z-index: -1;
+   }
+   
+   /*
+     yuk lihat hasilnya
+     dan selamat mencoba
+     
+   */
+   
+</style>
+   
+</body>
+</html>
